@@ -1,0 +1,3 @@
+[submodule "design_report_mono"]
+	path = design_report_mono
+	url = https://github.com/xmarts/design_report_mono.git
