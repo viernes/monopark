@@ -4,3 +4,6 @@
 [submodule "mono_reports"]
 	path = mono_reports
 	url = https://github.com/xmarts/mono_reports.git
+[submodule "add_clabe"]
+	path = add_clabe
+	url = https://github.com/xmarts/add_clabe.git
