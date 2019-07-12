@@ -10,3 +10,6 @@
 [submodule "reporte-cotizacion"]
 	path = reporte-cotizacion
 	url = git@github.com:xmarts/reporte-cotizacion.git
+[submodule "invoice_report_design"]
+	path = invoice_report_design
+	url = git@github.com:xmarts/invoice_report_design.git
