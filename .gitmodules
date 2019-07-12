@@ -7,3 +7,6 @@
 [submodule "add_clabe"]
 	path = add_clabe
 	url = https://github.com/xmarts/add_clabe.git
+[submodule "reporte-cotizacion"]
+	path = reporte-cotizacion
+	url = git@github.com:xmarts/reporte-cotizacion.git
