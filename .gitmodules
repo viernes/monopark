@@ -16,3 +16,6 @@
 [submodule "mod_estructura_crm"]
 	path = mod_estructura_crm
 	url = https://github.com/xmarts/mod_estructura_crm.git
+[submodule "date_crm"]
+	path = date_crm
+	url = https://github.com/xmarts/date_crm.git
