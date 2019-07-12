@@ -13,3 +13,6 @@
 [submodule "invoice_report_design"]
 	path = invoice_report_design
 	url = git@github.com:xmarts/invoice_report_design.git
+[submodule "mod_estructura_crm"]
+	path = mod_estructura_crm
+	url = https://github.com/xmarts/mod_estructura_crm.git
