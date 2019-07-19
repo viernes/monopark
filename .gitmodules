@@ -19,3 +19,6 @@
 [submodule "date_crm"]
 	path = date_crm
 	url = https://github.com/xmarts/date_crm.git
+[submodule "formatos_monopark"]
+	path = formatos_monopark
+	url = https://github.com/xmarts/formatos_monopark.git
