@@ -28,3 +28,6 @@
 [submodule "car_ventas_mono"]
 	path = car_ventas_mono
 	url = https://github.com/xmarts/car_ventas_mono.git
+[submodule "carpeta_compras_monpark"]
+	path = carpeta_compras_monpark
+	url = https://github.com/xmarts/carpeta_compras_monpark.git
