@@ -22,3 +22,6 @@
 [submodule "formatos_monopark"]
 	path = formatos_monopark
 	url = https://github.com/xmarts/formatos_monopark.git
+[submodule "carpeta_ventas_monopark"]
+	path = carpeta_ventas_monopark
+	url = https://github.com/xmarts/carpeta_ventas_monopark.git
