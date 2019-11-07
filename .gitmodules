@@ -31,3 +31,6 @@
 [submodule "carpeta_compras_monpark"]
 	path = carpeta_compras_monpark
 	url = https://github.com/xmarts/carpeta_compras_monpark.git
+[submodule "carpeta_reporte_inventario"]
+	path = carpeta_reporte_inventario
+	url = https://github.com/xmarts/carpeta_reporte_inventario.git
