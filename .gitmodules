@@ -34,3 +34,9 @@
 [submodule "carpeta_reporte_inventario"]
 	path = carpeta_reporte_inventario
 	url = https://github.com/xmarts/carpeta_reporte_inventario.git
+[submodule "carpeta_report_sale"]
+	path = carpeta_report_sale
+	url = https://github.com/xmarts/carpeta_report_sale.git
+[submodule "minutas"]
+	path = minutas
+	url = https://github.com/xmarts/minutas.git
