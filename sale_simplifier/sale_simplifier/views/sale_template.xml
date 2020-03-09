@@ -1,11 +1,173 @@
 <?xml version="1.0" encoding="utf-8"?>
 <odoo>
+    <template id="portal_signature" name="Ask Signature">
+        <div t-att-class="'o_portal_signature_form'"
+            t-att-data-partner-name="partner_name"
+            t-att-data-partner-razn_social="social_reason"
+            t-att-data-partner-legal_representative="legal_representative"
+            t-att-data-partner-type_identifier="type_identifier"
+            t-att-data-partner-identifier="identifier"
+            t-att-data-res-model="object._name"
+            t-att-data-res-id="object.id"
+            t-att-data-call-url="callUrl"
+            t-att-data-sign-label="signLabel"
+            t-att-data-access-token="accessToken"/>
+    </template>
+    <template id="assets_frontend" inherit_id="web.assets_frontend" name="Simplifier Assets" priority="15">
+        <xpath expr="//script[last()]" position="after">
+            <script type="text/javascript" src="/sale_simplifier/static/src/js/portal_signature.js"></script>
+        </xpath>
+    </template>
+
     <template id="sale_order_portal_content" inherit_id="sale.sale_order_portal_content">
         <xpath expr="//table[@id='sales_order_table']/thead/tr/th[@t-if='display_discount']" position="replace"/>
         <xpath expr="//td[@t-if='display_discount']" position="replace"/>
-
         <xpath expr="//div[@t-field='line.price_unit']" position="replace">
             <div t-field="line.price_unit" t-if="line.discount == 0"/>
+        </xpath>
+    </template>
+
+    <template id="sale_order_portal_template" inherit_id="sale.sale_order_portal_template">
+        <xpath expr="//t[@t-call='portal.portal_signature']" position="replace">
+            <p>
+                <center>CONDICIONES DE PRECIO:</center>
+                1. Los precios unitarios no incluyen 16% de IVA y son válidos SOLO en la totalidad de la compra. <br/>
+2. Precios y condiciones están sujetos a cambio sin previo aviso, hasta la firma de aceptación del pedido
+por parte del cliente y recibido el pago de anticipo. <br/>
+3. Precios expresados en pesos mexicanos, basados en la paridad del dólar americano (USD). 7 días de
+vigencia a partir de la fecha de envío de la cotización y/o confirmación de pedido. <br/>
+                <center>CONDICIONES DE PAGO </center>
+1. Los Precios que se establecen son para entrega libre a bordo en la empresa
+MONOPARK (en lo sucesivo y para los términos de estas condiciones se denominará como: La Empresa)
+con domicilio fiscal en Av. Periférico Sur 4270-N, CP: 45610. Tlaquepaque Jalisco, México. <br/>
+2. Forma de pago: 70% de anticipo, 30% al aviso de entrega dado al cliente vía telefónica o e-mail por
+parte de la empresa. Los porcentajes corresponden al valor total del presente pedido. Los porcentajes se
+pueden ajustar a negociaciones extraordinarias las cuales deben constar por escrito en este contrato. <br/>
+3. El cliente deberá confirmar su depósito enviando el comprobante de pago vía Email al correo
+administracion@monopark.com.mx con copia a su asesor. <br/>
+4. Las mercancías que se describen en este pedido, deben estar liquidadas en su totalidad por el cliente
+antes de ser entregadas. <br/>
+5. Las tarifas de cargos por envío, son sujetas a revisión al momento de ser liquidadas debido a la variación
+de precios en combustibles. <br/>
+6. Cuando el envío es realizado por medio de un tercero, servicios de paquetería (Tres guerras, Castores,
+Potosinos etc.), los costos otorgados son aproximados, el costo real del envío lo proporcionará el
+proveedor de servicios seleccionado al contar con el producto en sus instalaciones. <br/>
+7. En términos de crédito, en el caso de incumplimiento en cuanto al pago puntual de las condiciones
+establecidas en este pedido, el cliente entiende y asume que deberá pagar el equivalente al 5% (cinco
+por ciento, sobre el total del pedido) mensual del valor de los equipos por concepto de interés moratorio.
+Este concepto será facturado al día siguiente a la fecha de vencimiento. <br/>
+CUENTAS BANCARIAS: SANTANDER – CRISTOBAL FRANCISCO DUEÑEZ BARBA
+CUENTA: 92001934419. CLABE INTERBANCARIA: 014320920019344192 <br/>
+8. El cliente se obliga a pagar el presente pedido en forma directa a CRISTOBAL FRANCISCO DUEÑEZ BARBA
+(mediante cheque nominativo, depósito bancario o transferencia electrónica de fondos en la cuenta
+bancaria descritas en este contrato), y no por conducto de terceros (incluyendo distribuidores
+autorizados), por lo que en caso de efectuar el pago a éstos por cualquier motivo, no quedará liberado
+de su obligación de pago.
+CANCELACIÓN DE PEDIDO En caso de que el cliente desee cancelar el pedido después de haber
+realizado su pago parcial o total del mismo, el cliente acepta que se le aplicará una sanción
+correspondiente al 20% sobre el total del pedido. <br/>
+<center>TIEMPOS, CONDICIONES Y FORMA DE ENTREGA: </center>
+1. Los tiempos de entrega se consideran a partir de la confirmación del pago en firme, de igual manera
+se requiere la firma del contrato de compra-venta, y el comprobante de pago vía email. Los tiempos de
+entrega, están sujetos a modificación en disponibilidad de inventarios, tiempos de producción en planta
+y tránsitos de importaciones. <br/>
+2. Por entrega inmediata se entienden a programación de fecha de instalación y/o entrega por parte del
+departamento de logística Monopark, el cliente acepta y está de acuerdo de los tiempos de proceso
+internos para las entregas. <br/>
+3. En caso de requerir instalación de los productos, la zona de instalación debe estar acondicionada al
+100% por parte del cliente previo a que se programe la visita por parte de los instaladores, enviando
+fotografías para valoración por parte del departamento de logística. De no estar acondicionada y llegar
+los instaladores, el cliente debe pagar extra de viáticos y gastos operativos, a su vez pierde los antes
+depositado por ese concepto. <br/>
+4. Los plazos de entrega establecidos son referenciales y pueden variar. El cliente libera de responsabilidad
+a Monopark en caso de retrasos por factores externos ajenos a la misma, tales como (enunciativa y no
+limitativamente): saturación de pedidos en producción, fallas mecánicas en maquinaria para
+producción, etc. En temas de importación: fenómenos climatológicos, desastres naturales,
+acontecimientos sociales trascendentales, revisiones de aduana y temporada alta en puertos.
+Independientemente de lo anterior, el cliente se obliga a liquidar el total del pedido en el plazo y términos
+establecidos para ello. <br/>
+5. Dada la notificación al cliente vía telefónica y/o Email de llegada la mercancía a la bodega de la
+empresa, el cliente cuenta con un máximo de 8 días hábiles para liquidar el saldo del pedido; de no ser
+así generará un cobro por almacenaje del 5% sobre el total del pedido y por mes que esté la mercancía
+en bodega de la empresa, no podrá ser entregada la mercancía hasta en tanto cubra tal concepto. <br/>
+6. El costo de los fletes, maniobras, instalación y viáticos deben ser pagados totalmente por el cliente y
+éste se obliga a pagarlos antes de que los instaladores autorizados acudan a la instalación respectiva.
+Una vez cubiertos estos gastos, MONOPARK se obliga a entregar a pie de puerta exterior del domicilio que
+para efecto de recepción de los equipos; el acarreo, traslado, ingreso y/o distribución de los equipos
+dentro y fuera de sus instalaciones, correrán siempre por cuenta del cliente. Diferente a esto, tendrá un
+costo adicional y será cotizado por separado. <br/>
+7. Es responsabilidad del cliente al momento de confirmar el pedido indicar si alguna maniobra especial
+será requerida para llevar a cabo la correcta entrega del equipo. De lo contrario, el cliente entiende y
+asume todas las responsabilidades del adecuado manejo de los equipos desde pie de camión hasta el
+lugar donde serán colocados y puestos en operación, deslindando a MONOPARK por mal manejo en
+acarreos, maniobras, colocación, reservación y costo de grúas, y/o resguardo de los equipos. <br/>
+8. El cliente se obliga a proporcionar las condiciones necesarias para la adecuada recepción, entrega o
+resguardo de los equipos de acuerdo con las especificaciones y condiciones que le indique la
+empresa. En caso de incumplimiento, MONOPARK se reserva el derecho de cobrar una penalidad ó el
+equivalente al 100% del valor del flete por entregas en falso, como son: no contar con área de instalación
+terminada y limpia, no haya personal quien reciba, domicilio incorrecto. <br/>
+9. La entrega se considera en días y horarios hábiles de oficina; Cualquier logística diferente a esto, tendrá
+un costo adicional y será cotizado por separado. <br/>
+10. Es responsabilidad del cliente realizar todos los trámites de licencias y/o permisos de accesos,
+descarga e instalación en caso de requerirse. <br/>
+11. En el evento de que el cliente por causas ajenas a MONOPARK no pueda aceptar la entrega o no
+esté en condiciones de recibir los equipos y por ello el tiempo de entrega estipulado en este pedido se
+vea afectado y/o incrementado, MONOPARK exigirá el pago de las sumas pendientes al momento y/o
+alguna otra suma que resulte del almacenaje, estibas, maniobras, dobles traslados como consecuencia
+de la demora de entrega. <br/>
+12. Monopark cuenta con diferentes CEDIS en la República Mexicana, será decisión del cliente la sucursal
+o sucursales de MONOPARK en el cual será entregado su pedido, debiendo cubrir a su exclusivo costo y
+cargo los viáticos y gastos de envío requeridos. <br/>
+<center> CONDICIONES EN INSTALACIÓN DE LOS EQUIPOS: </center>
+1. El cliente debe asumir la fabricación de planchas de concreto de 15cm como mínimo de espesor y
+mandar previamente fotografías como garantía de que están los trabajos realizados previos a la llegada
+de los instaladores. <br/>
+2. El cliente entiende y asume que en caso de requerir más de una visita de instalación por causas ajenas
+a MONOPARK, las visitas adicionales serán cotizadas y cobradas por separado. <br/>
+3. Los costos de conceptos de cargo por envío e instalación (Viáticos) están sujetos a variación si ocurren
+retrasos en las fechas o días de armado ajenos MONOPARK y deberán ser facturados y liquidados “antes”
+de ser entregada la obra. <br/>
+4. La limpieza gruesa no está incluida en los trabajos de instalación. Toda obra debe estar terminada y
+limpia al 100% por parte del cliente para evitar que los materiales ajenos dañen el producto a instalar.
+5. Monopark no se hace responsable por daños en recubrimientos de pisos cerámicos, adoquines,
+concretos estampados, azoteas u otros al barrenar las superficies para la correcta instalación de los
+equipos. <br/>
+<center> CONDICIONES DE SERVICIO POST-VENTA: </center>
+1. El costo amparado en este pedido no incluye servicio de mantenimiento. <br/>
+2. El servicio de mantenimiento preventivo y correctivo será cotizado por separado. <br/>
+3. La falta de mantenimiento preventivo periódico invalida la garantía del equipo. <br/>
+GARANTÍAS. La póliza y tiempos de garantía se especifican según cada línea de producto e inician a
+partir de la fecha de la instalación o entrega formal al cliente. La garantía que ampara los equipos del
+presente pedido, solo podrá hacerse valida, si el cliente no tiene ningún saldo pendiente hacia la empresa
+y si la instalación ha sido realizada por los instaladores autorizados Monopark.
+DESCRIPCIONES DEL PRODUCTO. Será responsabilidad exclusiva del cliente al momento de firmar el
+presente contrato revisar minuciosamente que las cantidades, descripciones, marcas, calibres, medidas,
+colores, acabados, características del producto, entre otros; cumplen con su entera satisfacción, por
+tanto LA EMPRESA, no acepta ningún tipo de cancelación, devolución, cambio y/o reintegro de dinero si
+existen errores en descripciones u omisiones que el cliente haya cometido al momento de la compra.
+Los render, fotografías, dibujos y todo tipo de imagen usada en las cotizaciones, propuestas y pedidos son
+meramente ilustrativas, no son a diseños a escala. Los colores y diseños pueden variar al producto real así
+como las medidas finales pueden tener margen de error al estipulado en la descripción de cada pedido
+según su tipo de manufactura y LA EMPRESA no garantiza dimensiones exactas en sus productos. La
+empresa no se hace responsable por diferencia en los tonos de colores entre lotes de productos, así como
+percepción errónea por parte del cliente en el color o diseño basado en la propuesta digital enviada.
+ACEPTACIÓN DE CLÁUSULAS. EL PEDIDO DEBERÁ ESTAR FIRMADO POR EL REPRESENTANTE LEGAL DE LA
+RAZÓN SOCIAL MORAL O PERSONA FÍSICA A FACTURAR CON FACULTADES PARA ELLO. LA FIRMA DEL
+CLIENTE EN ESTE PEDIDO REPRESENTA LA ACEPTACIÓN EXPRESA DE TODOS LOS TÉRMINOS Y CONDICIONES.
+El firmar un tercero de la empresa, no deslinda la validez de las cláusulas, siendo válido la firma de
+compradores, administradores, contadores, empleados de toda índole, asesores externos, asistentes o
+cualquier tercero de EL CLIENTE, aceptando en su totalidad cada punto del presente contrato.
+            </p>
+            <t t-call="sale_simplifier.portal_signature">
+                <t t-set="object" t-value="sale_order"/>
+                <t t-set="partner_name" t-value="sale_order.partner_id.name"/>
+                <t t-set="social_reason" t-value="sale_order.partner_id.parent_id and sale_order.partner_id.parent_id.name or sale_order.partner_id.name"/>
+                <t t-set="legal_representative" t-value="sale_order.partner_id.parent_id and sale_order.partner_id.parent_id.legal_representative or sale_order.partner_id.legal_representative"/>
+                <t t-set="type_identifier" t-value="sale_order.partner_id.type_document"/>
+                <t t-set="identifier" t-value="sale_order.partner_id.identifier"/>
+                <t t-set="callUrl" t-value="sale_order.get_portal_url(suffix='/accept')"/>
+                <t t-set="accessToken" t-value="sale_order.access_token"/>
+            </t>
         </xpath>
     </template>
 </odoo>

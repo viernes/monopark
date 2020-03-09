@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="res_partner" model="ir.ui.view">
+      <field name="name">res.partner</field>
+      <field name="model">res.partner</field>
+      <field name="inherit_id" ref="base.view_partner_form"/>
+      <field name="arch" type="xml">
+        <field name="vat" position="after">
+          <field name="type_document" attrs="{'invisible': [('parent_id', '==', False)]}"/>
+          <field name="identifier" attrs="{'invisible': [('parent_id', '==', False)]}"/>
+        </field>
+          <xpath expr="//field[@name='type']" position="after">
+            <field name="social_razn" attrs="{'invisible': [('parent_id', '!=', False)]}"/>
+            <field name="legal_representative" attrs="{'invisible': [('parent_id', '!=', False)]}"/>
+          </xpath>
+      </field>
+    </record>
+</odoo>
