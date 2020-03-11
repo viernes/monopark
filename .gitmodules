@@ -40,3 +40,6 @@
 [submodule "minutas"]
 	path = minutas
 	url = https://github.com/xmarts/minutas.git
+[submodule "sale_simplifier"]
+	path = sale_simplifier
+	url = git@gitlab.com:xmarts/xmarts-apps/sale_simplifier.git
