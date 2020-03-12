@@ -43,3 +43,6 @@
 [submodule "sale_simplifier"]
 	path = sale_simplifier
 	url = git@gitlab.com:xmarts/xmarts-apps/sale_simplifier.git
+[submodule "office_supplies"]
+	path = office_supplies
+	url = git@gitlab.com:xmarts/xmarts-apps/office_supplies.git
