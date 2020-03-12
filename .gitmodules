@@ -46,3 +46,6 @@
 [submodule "office_supplies"]
 	path = office_supplies
 	url = git@gitlab.com:xmarts/xmarts-apps/office_supplies.git
+[submodule "uuid_provider_invoice"]
+	path = uuid_provider_invoice
+	url = git@gitlab.com:xmarts/uuid_provider_invoice.git
