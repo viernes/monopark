@@ -49,3 +49,6 @@
 [submodule "uuid_provider_invoice"]
 	path = uuid_provider_invoice
 	url = git@gitlab.com:xmarts/uuid_provider_invoice.git
+[submodule "purchase-discount"]
+	path = purchase-discount
+	url = git@github.com:xmarts/purchase-discount.git
