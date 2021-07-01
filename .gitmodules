@@ -49,3 +49,6 @@
 [submodule "purchase-discount"]
 	path = purchase-discount
 	url = git@github.com:xmarts/purchase-discount.git
+[submodule "carpeta_ventas_monopark"]
+	path = carpeta_ventas_monopark
+	url = git@github.com:xmarts/carpeta_ventas_monopark.git
