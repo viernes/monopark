@@ -52,3 +52,6 @@
 [submodule "purchase-discount"]
 	path = purchase-discount
 	url = git@github.com:xmarts/purchase-discount.git
+[submodule "signature-on-purchase-order"]
+	path = signature-on-purchase-order
+	url = git@github.com:xmarts/signature-on-purchase-order.git
